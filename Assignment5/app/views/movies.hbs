@@ -1,0 +1,27 @@
+<h1> Movie catalog </h1>
+
+<form action='/movies' method="GET">
+	<label>Director</label>
+	<input type="text" name="director">
+	<button type="submit">Filter</button>
+</form>
+{{#if filter}}
+	<h2>Showing films only by {{filter}}</h2>
+{{/if}}
+<table border="1">
+<tr>
+	<td>Title</td>
+	<td>Year</td>
+	<td>Director</td>
+</tr>
+{{#each movie}}
+<tr>
+	<td>{{title}}</td>
+	<td>{{year}}</td>
+	<td>{{director}}</td>
+</tr>
+{{/each}}
+
+</table>
+
+<a href='/movies/add'>Add a movie</a>

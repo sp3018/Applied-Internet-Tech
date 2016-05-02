@@ -1,0 +1,19 @@
+<h1> 480Chan - Image Board </h1>
+<form action='/remove-img/{{slug}}' method="POST">
+{{#each post}}
+	<h3>{{title}}</h3>
+		{{#each images}}
+			<input type="checkbox" name="removal" value={{this._id}}>
+			<body>{{caption}}</body><br>
+			<img src={{url}}><br>
+		{{/each}}
+{{/each}}
+	<button type="submit">Remove Selected</button>
+</form>
+
+<form action='/edit-post/{{slug}}' method="POST">
+	<body>URL:<input type="text" name="url"></body>
+	<body>Caption:<input type="text" name="caption"></body>
+	
+	<button type="submit">Add Another</button>
+</form>

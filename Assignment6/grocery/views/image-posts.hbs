@@ -1,0 +1,18 @@
+<h1> 480Chan - Image Board </h1>
+<form action='/process-post' method=POST>
+	<h4>Image Post Title: <input type="text" name="title"></h4>
+	<h4>Image 1 URL:<input type="text" name="url1"> Caption:<input type="text" name="caption1"</input></h4>
+	<h4>Image 2 URL:<input type="text" name="url2"> Caption:<input type="text" name="caption2"</input></h4>
+	<h4>Image 3 URL:<input type="text" name="url3"> Caption:<input type="text" name="caption3"</input></h4>
+
+	<button type="submit">Add New Image Post</button>
+</form>
+<ul>
+{{#each posts}}
+	<h3><a href=image-post/{{slug}}> {{title}}</a></h3>
+		{{#each images}}
+			<body>{{caption}}</body><br>
+			<img src={{url}}><br>
+		{{/each}}
+{{/each}}
+</ul>
